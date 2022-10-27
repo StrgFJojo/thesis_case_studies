@@ -1,0 +1,13 @@
+1. run timestamps_to_annotatedscenes.py
+    - takes as input timestamps_<comp>.csv with columns team,ts_perf_start,ts_perf_end
+    - produces scenes-results_<comp>.csv with columns
+    scene_id,ts_start,ts_end,frame_start,frame_end,Team,#,Nat,SPTSS,FSTSS,TotalScore,Season,Event
+
+2. run per_scene_entanglement.py
+    - takes as input scenes-results_<comp>.csv
+    - cuts video into scenes according to csv
+    - calls detector to get synch and distance time series for each scene
+    - produces output df per_scene_entanglement_<comp>.pkl (pickled)
+    with entanglement values and competition outcomes
+
+3. run stats_analysis
